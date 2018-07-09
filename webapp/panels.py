@@ -59,6 +59,7 @@ class PanelOne(Panel):
         price = c['a']/100.0
         return price
 
+
 class PanelTwo(Panel):
     """PanelTwo implementation
     """
