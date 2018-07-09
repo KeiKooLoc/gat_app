@@ -1,0 +1,13 @@
+# Everything the developer needs in addition to the production requirements
+-r prod.txt
+
+# Testing
+pytest==3.2.1
+pytest-cov==2.5.1
+#WebTest>=2.0.27
+#factory-boy>=2.8.1
+
+# Documentation
+Sphinx==1.7.9
+autodoc==0.5.0
+sphinxcontrib-napoleon==0.6.1

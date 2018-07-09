@@ -1,0 +1,34 @@
+# Everything needed in production
+
+# Flask
+Flask==0.12.2
+
+# Debug toolbar
+Flask-DebugToolbar==0.10.1
+
+# Database
+SQLAlchemy>=1.2.9
+Flask-SQLAlchemy>=2.3.2
+
+# Migrations
+# Flask-Migrate>=2.0.4
+
+# FLASK-RESTFull
+flask-restful==0.3.6
+
+# App command line
+Flask-Script==2.0.5
+
+# Auth
+# Flask-Login>=0.4.0
+# Flask-Bcrypt>=0.7.1
+
+# Caching
+# Flask-Caching>=1.0.0
+
+# Deployment
+gunicorn==19.7.1
+
+# Webscrap
+beautifulsoup4>=4.4.0
+
