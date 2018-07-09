@@ -10,7 +10,7 @@ Application UI based on MDB Free and EBM Bootstrap Plugin, available under MIT L
 Running Locally
 ---------------
 
-It can be also run locally. Make sure you have Python_ installed ::
+It can be run locally. Make sure you have Python_ installed ::
 
     $ git clone https://github.com/mdyzma/gat_app.git
     $ cd gat_app
@@ -19,7 +19,7 @@ It can be also run locally. Make sure you have Python_ installed ::
 
 Your app should now be running on `http://127.0.0.1:5000 <http://localhost:5000/>`_.
 
-
+It can be also deployed to tone of the popular deployment services like HEROKU.
 
 
 .. links
