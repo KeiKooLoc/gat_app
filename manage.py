@@ -14,7 +14,7 @@ from flask_script.commands import ShowUrls, Clean
 # -----------------------------------------------------------------------------
 # Local Imports
 # -----------------------------------------------------------------------------
-from app.app import create_app
+from webapp.app import create_app
 from webapp.settings import DevConfig, ProdConfig
 
 HERE = os.path.abspath(os.path.dirname(__file__))

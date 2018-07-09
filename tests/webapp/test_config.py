@@ -1,6 +1,6 @@
 """Test configs."""
-from app.app import create_app
-from app.settings import DevConfig, ProdConfig, TestConfig
+from webapp.app import create_app
+from webapp.settings import DevConfig, ProdConfig, TestConfig
 
 
 def test_production_config():
