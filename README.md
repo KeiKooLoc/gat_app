@@ -1,10 +1,15 @@
-# dev test
 
-**This test is not about solving a problem. It's about execution and checking what's your default way of thinking and coding habits.**
 
-**This test is described quite vaguely on purpose, so interpretation of it's explicit and implicit requirements is up to you.**
+# Gat app
 
-Prepare a rails 4.2 application using Ruby 2.1 , which would have 2 isolated APIs, public and private.
+[![Documentation Status](//readthedocs.org/projects/gat-app/badge/?version=latest)](https://gat-app.readthedocs.io/en/latest/?badge=latest)
+
+Flask Rest API excersize
+
+
+
+# Model
+
 
 Private API responding to the following requests:
   
