@@ -8,10 +8,10 @@ Flask-DebugToolbar==0.10.1
 
 # Database
 SQLAlchemy>=1.2.9
-Flask-SQLAlchemy>=2.3.2
+Flask-SQLAlchemy==2.3.2
 
 # Migrations
-# Flask-Migrate>=2.0.4
+Flask-Migrate==2.2.1
 
 # FLASK-RESTFull
 flask-restful==0.3.6
