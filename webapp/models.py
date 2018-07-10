@@ -19,7 +19,7 @@ class Country(db.Model):
     __tablename__ = "country"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     country_code = db.Column(db.Integer, nullable=False)
-    panel_provider_id = db.relationship('LocationGroup', backref='id', lazy='dynamic')
+    panel_provider_id = db.relationship('location_group', backref='id', lazy='dynamic')
 
     # def __init__(self, country_code, panel_provider_id):
     #     self.country_code = country_code
@@ -39,20 +39,23 @@ class Location(db.Model):
     __tablename__ = "location"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(120), index=True, unique=True)
-    external_id = db.relationship('LocationGroup', secondary=external_id, backref=db.backref(lazy=True), lazy='subquery')
+    external_id = db.relationship('location', secondary=LocationGroup, backref=db.backref('location_group', lazy=True), lazy='subquery')
     secret_code = db.Column(db.String(120), index=True, unique=True)
 
+
 LocationGroup = db.Table('location_group',
-    db.Column('id', db.Integer, primary_key=True, autoincrement=True)
+    db.Column('id', db.Integer, primary_key=True, autoincrement=True),
     db.Column('name', db.String(120), index=True, unique=True),
-    db.Column('country_id', db.Integer, db.ForeignKey('country.id'))
+    db.Column('country_id', db.Integer, db.ForeignKey('country.id')),
     db.Column('panel_provider_id', db.Integer, db.ForeignKey('panel_provider.id')))
 
 
 TargetGroup = db.Table('location_group',
-    db.Column('id', db.Integer, primary_key=True, autoincrement=True)
+    db.Column('id', db.Integer, primary_key=True, autoincrement=True),
     db.Column('name', db.String(120), index=True, unique=True),
-    db.Column('country_id', db.Integer, db.ForeignKey('country.id'))
+    db.Column('external_id', db.Integer, db.ForeignKey('country.id')),
+    db.Column('parent_id', db.Integer, db.ForeignKey('panel_provider.id')),
+    db.Column('secret_code', db.Integer, db.ForeignKey('location.secret_code')),
     db.Column('panel_provider_id', db.Integer, db.ForeignKey('panel_provider.id')))
 
 
