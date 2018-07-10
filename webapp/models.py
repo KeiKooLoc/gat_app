@@ -18,8 +18,8 @@ from webapp.app import db
 class Country(db.Model):
     __tablename__ = "country"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    # country_code = db.Column(db.String(128), nullable=False)
-    # panel_provider_id = db.Column(db.String(128), nullable=False)
+    country_code = db.Column(db.Integer, nullable=False)
+    panel_provider_id = db.relationship('LocationGroup', backref='id', lazy='dynamic')
 
     # def __init__(self, country_code, panel_provider_id):
     #     self.country_code = country_code
@@ -32,24 +32,38 @@ class Country(db.Model):
 class PanelProvider(db.Model):
     __tablename__ = "panel_provider"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    # code = db.Column()
+    code = db.Column(db.Integer, unique=True)
 
 
 class Location(db.Model):
     __tablename__ = "location"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    # id, name, external_id, secret_code
+    name = db.Column(db.String(120), index=True, unique=True)
+    external_id = db.relationship('LocationGroup', secondary=external_id, backref=db.backref(lazy=True), lazy='subquery')
+    secret_code = db.Column(db.String(120), index=True, unique=True)
 
-class LocationGroup(db.Model):
-    __tablename__ = "location_group"
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    # id, name, country_id, panel_provider_id
+LocationGroup = db.Table('location_group',
+    db.Column('id', db.Integer, primary_key=True, autoincrement=True)
+    db.Column('name', db.String(120), index=True, unique=True),
+    db.Column('country_id', db.Integer, db.ForeignKey('country.id'))
+    db.Column('panel_provider_id', db.Integer, db.ForeignKey('panel_provider.id')))
 
 
-class TargetGroup(db.Model):
-    __tablename__ = "target_group"
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    id, name, external_id, parent_id, secret_code, panel_provider_id
+TargetGroup = db.Table('location_group',
+    db.Column('id', db.Integer, primary_key=True, autoincrement=True)
+    db.Column('name', db.String(120), index=True, unique=True),
+    db.Column('country_id', db.Integer, db.ForeignKey('country.id'))
+    db.Column('panel_provider_id', db.Integer, db.ForeignKey('panel_provider.id')))
+
+
+# class TargetGroup(db.Model):
+#     __tablename__ = "target_group"
+#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#     name = db.Column(db.String(120), index=True, unique=True)
+#     external_id = db.Column(db.Integer, db.ForeignKey('panel_provider.id')
+#     parent_id = db.Column(db.Integer, db.ForeignKey('target_group.id')
+#     secret_code = db.Column(db.String(120), index=True, unique=True)
+#     panel_provider_id = db.Column(db.Integer, db.ForeignKey('panel_provider.id')
 
 
 # API models

@@ -43,6 +43,4 @@ def create_app(app, config_object=None):
     def index():
         return render_template("home.html")
 
-    @app.
-
     return app
