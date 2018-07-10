@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+<!-- Title for each page -->
+{% block title %}Home{% endblock %}
+<!-- Site Specific Styles -->
+{% block styles %}
+<!-- Template styles -->
+<style>
+    /* TEMPLATE STYLES */
+    .flex-center {
+        color: #fff;
+    }
+    .intro-1 {
+        background: url("https://mdbootstrap.com/img/Photos/Horizontal/Work/full page/img%20(2).jpg")no-repeat center center;
+        background-size: cover;
+    }
+    .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+    }
+    .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+    }
+</style>
+{% endblock %}
+<!--Intro Section-->
+{% block intro %}
+<section class="view intro-1 hm-black-strong">
+    <div class="full-bg-img flex-center">
+        <div class="container">
+            <ul>
+                <li>
+                    <h1 class="h1-responsive font-bold wow fadeInDown" data-wow-delay="0.2s">GAP APP DEMO</h1>
+                </li>
+                <li>
+                    <h3>App is running, try REST API</h3>
+                    <p>TBD: REST API examples from documentation</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
