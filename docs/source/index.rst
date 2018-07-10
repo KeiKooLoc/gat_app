@@ -6,6 +6,8 @@
 Welcome to GAP documentation!
 =============================
 
+|docs|
+
 ================== =============
 **Last modified:** |today|
 ================== =============
@@ -17,9 +19,6 @@ Welcome to GAP documentation!
    quickstart
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. |docs| image:: //readthedocs.org/projects/gat-app/badge/?version=latest
+:target: https://gat-app.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
