@@ -14,13 +14,13 @@ from flask_script.commands import ShowUrls, Clean
 # -----------------------------------------------------------------------------
 # Local Imports
 # -----------------------------------------------------------------------------
-from webapp.app import create_app
+from webapp.app import app, create_app
 from webapp.settings import DevConfig, ProdConfig
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 TEST_PATH = os.path.join(HERE, 'tests')
 
-app = create_app(DevConfig)
+app = create_app(app, DevConfig)
 
 manager = Manager(app)
 
