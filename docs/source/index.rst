@@ -8,6 +8,7 @@ Welcome to GAP documentation!
 
 |docs|
 
+
 ================== =============
 **Last modified:** |today|
 ================== =============
@@ -19,6 +20,7 @@ Welcome to GAP documentation!
    quickstart
 
 
-.. |docs| image:: //readthedocs.org/projects/gat-app/badge/?version=latest
-:target: https://gat-app.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
+
+.. |docs| image:: https://readthedocs.org/projects/gat-app/badge/?version=latest
+   :target: https://gat-app.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status

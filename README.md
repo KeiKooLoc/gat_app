@@ -2,7 +2,7 @@
 
 # Gat app
 
-[![Documentation Status](//readthedocs.org/projects/gat-app/badge/?version=latest)](https://gat-app.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/gat-app/badge/?version=latest)](https://gat-app.readthedocs.io/en/latest/?badge=latest)
 
 Flask Rest API excersize
 
